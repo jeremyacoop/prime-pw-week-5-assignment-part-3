@@ -12,12 +12,12 @@ function addToCollection(title, artist, yearPublished) {
     return musicAlbum;
 }// end addToCollection
 
-console.log(addToCollection('Lorem', 'Ipsum', 2015));
-console.log(addToCollection('Filler', 'Random', 3689));
-console.log(addToCollection('Filler', 'Placeholder', 3690));
-console.log(addToCollection('Filler', 'King of Placeholders', 4001));
-console.log(addToCollection('Run DMX', 'All About the Scrillions', 1970));
-console.log(addToCollection('Random', 'Filler', 2022));
+console.log(addToCollection('Ipsum', 'Lorem', 2015));
+console.log(addToCollection('Random', 'Filler', 3689));
+console.log(addToCollection('Placeholder', 'Filler', 3690));
+console.log(addToCollection('King of Placeholders', 'Filler', 4001));
+console.log(addToCollection('All About the Scrillions', 'Run DMX', 1970));
+console.log(addToCollection('Filler', 'Random', 2022));
 
 console.log(collection);
 
@@ -31,3 +31,17 @@ function showCollection(array) {
 }// end showCollection
 
 console.log(showCollection(collection));
+
+function findByArtist(artist) {
+    let artistResults = [];
+    for(let item of collection) {
+            //console.log(item.artist);
+        if(item.artist === artist) {
+            artistResults.push(item);
+        }
+    }
+    return artistResults;
+}// end findByArtist
+
+showCollection(findByArtist('Filler'));
+console.log(findByArtist('Absent'));
