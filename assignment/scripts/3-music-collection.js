@@ -45,3 +45,23 @@ function findByArtist(artist) {
 
 showCollection(findByArtist('Filler'));
 console.log(findByArtist('Absent'));
+
+// stretch goals
+
+function search(albumTemplate) {
+    let searchResults = [];
+    for(let item of collection) {
+     if(albumTemplate === '' || albumTemplate === {artist: '', yearPublished: ''} || albumTemplate === undefined) {
+         return collection;   
+        }else if(albumTemplate.artist === item.artist && albumTemplate.yearPublished === item.yearPublished) {
+            searchResults.push(item);
+            }
+    }
+    return searchResults;
+}
+
+console.log(search());
+console.log(search(''));
+console.log(search({}));
+console.log(search({artist: 'Lorem', yearPublished: 2015}));
+console.log(search({artist: 'Filler', yearPublished: 1980}));
